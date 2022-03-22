@@ -1,1 +1,4 @@
-
+zone "m1-1.ephec-ti.be" {
+    type master;
+    file "/etc/bind/zones/m1-1.ephec-ti.be";
+};
