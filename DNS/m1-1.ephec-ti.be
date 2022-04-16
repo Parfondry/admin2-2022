@@ -15,7 +15,7 @@ m1-1.ephec-ti.be.      IN      NS      ns.m1-1.ephec-ti.be.
 
 
 ;Le nom de mon serveur assigner à son IP
-ns			IN	A	[IP];
+ns			IN	A	[176.96.231.195];
 
 ;Serveur Web
 b2b			IN	A	[IP];
