@@ -16,4 +16,4 @@ EXPOSE 53/udp
 EXPOSE 53/tcp
 
 #commande qui permet au serveur la lecture de la configuration BINd9
-#CMD ["named", "-c", "/etc/bind/named.conf", "-g"]
+CMD ["named", "-c", "/etc/bind/named.conf", "-g"]
