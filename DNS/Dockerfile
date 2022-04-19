@@ -6,10 +6,10 @@ RUN apt update && apt upgrade -y && apt install bind9 bind9utils dnsutils net-to
 
 #Fichier de configuration à créer :
 
-#COPY named.conf /etc/bind/
-#COPY named.conf.local /etc/bind/
-#COPY named.conf.options /etc/bind/
-#COPY m1-1.ephec-ti.be /etc/bind/
+COPY named.conf /etc/bind/
+COPY named.conf.local /etc/bind/
+COPY named.conf.options /etc/bind/
+COPY m1-1.ephec-ti.be /etc/bind/
 
 #Ouverture du port 53 en UDP/TCP
 EXPOSE 53/udp
