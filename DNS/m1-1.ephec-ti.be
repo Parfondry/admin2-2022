@@ -2,11 +2,11 @@ $ORIGIN m1-1.ephec-ti.be.
 $TTL	3600
 @	    IN	    SOA	    ns.m1-1.ephec-ti.be.   root.m1-1.ephec-ti.be. (
 
-		    1	        ; Serial
+		        1	        ; Serial
 			3600		; Refresh
 			600		    ; Retry
 			86400		; Expire
-			600 )	    ; Negative Cache TTL
+			600 )	        ; Negative Cache TTL
 
 
 ;Nom de serveur faisant autoriter sur le domaine m1-1.ephec-ti.be.
