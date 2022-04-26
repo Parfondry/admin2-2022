@@ -18,9 +18,9 @@ m1-1.ephec-ti.be.      IN      NS      ns.m1-1.ephec-ti.be.
 ns			IN	A	[176.96.231.195];
 
 ;Serveur Web
-b2b			IN	A	[IP];
-www			IN	A	[IP];
+b2b			IN	A	[176.96.231.196];
+www			IN	A	[176.96.231.196];
 
 ; Serveur Mail
-mail			IN	A	[IP];
+mail			IN	A	[176.96.231.197];
 @			IN	MX	10	mail.m1-1.ephec-ti.be.
