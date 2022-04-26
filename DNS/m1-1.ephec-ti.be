@@ -15,12 +15,12 @@ m1-1.ephec-ti.be.      IN      NS      ns.m1-1.ephec-ti.be.
 
 
 ;Le nom de mon serveur assigner à son IP
-ns			IN	A	[176.96.231.195];
+ns			IN	A	176.96.231.195;
 
 ;Serveur Web
-b2b			IN	A	[176.96.231.196];
-www			IN	A	[176.96.231.196];
+b2b			IN	A	176.96.231.196;
+www			IN	A	176.96.231.196;
 
 ; Serveur Mail
-mail			IN	A	[176.96.231.197];
+mail			IN	A	176.96.231.197;
 @			IN	MX	10	mail.m1-1.ephec-ti.be.
