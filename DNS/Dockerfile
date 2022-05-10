@@ -4,12 +4,12 @@ FROM ubuntu:latest
 # verification de MAJ,installation de MAj,installions bind9 sur notre image
 RUN apt update && apt upgrade -y && apt install bind9 bind9utils dnsutils net-tools -y
 
-#Fichier de configuration à créer :
+#Fichier de configuration Ã  crÃ©er :
 
 COPY named.conf /etc/bind/
 COPY named.conf.local /etc/bind/
 COPY named.conf.options /etc/bind/
-COPY m1-1.ephec-ti.be /etc/bind/
+COPY db.m1-1.ephec-ti.be /etc/bind/
 
 #Ouverture du port 53 en UDP/TCP
 EXPOSE 53/udp
