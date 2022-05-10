@@ -2,7 +2,7 @@ $ ORIGIN m1-1.ephec-ti.be.
 $TTL	3600
 @	    IN	    SOA	    ns.m1-1.ephec-ti.be.   root.m1-1.ephec-ti.be. (
 
-		        1	        ; Serial
+		        2	        ; Serial
 			3600		; Refresh
 			600		; Retry
 			86400		; Expire
