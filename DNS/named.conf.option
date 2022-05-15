@@ -5,7 +5,7 @@ options {
 	querylog yes;
 
 	listen-on { any; };
-	allow-query { any; };
+	allow-query { internals; };
 
 	// If there is a firewall between you and nameservers you want
 	// to talk to, you may need to fix the firewall to allow multiple
@@ -24,8 +24,13 @@ options {
 	// If BIND logs error messages about the root key being expired,
 	// you will need to update your keys.  See https://www.isc.org/bind-keys
 	//========================================================================
+<<<<<<< HEAD
+	dnssec-enable yes;
+	dnssec-validation auto;
+=======
 	//dnssec-enable yes;
 	//dnssec-validation auto;
+>>>>>>> main
 	//dnssec-validation auto;
 	
 	recursion no;
