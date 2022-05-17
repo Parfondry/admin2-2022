@@ -10,10 +10,16 @@ $TTL    604800
 
 ; name servers - NS record
 @				IN	NS			ns.m1-1.ephec-ti.be.
+@				IN	MX	10		mail.m1-1.ephec-ti.be.
 
 ; name servers - A record
-ns 		        	IN	A	176.96.231.197
+@				  IN	A	176.96.231.197
+;@				IN	AAAA	fe80::250:56ff:feaa:91ce
+ns				IN	A	176.96.231.197
+;				  IN	AAAA	fe80::250:56ff:feaa:91ce
 
 ; mail server
-@				MX	10	mail.m1-1.ephec-ti.be
-mail				A	176.96.231.197
+mail				IN	A	176.96.231.197
+smtp				IN	CNAME	mail
+pop				  IN	CNAME	mail
+imap				IN	CNAME	mail
