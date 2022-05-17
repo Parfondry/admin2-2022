@@ -4,4 +4,3 @@ zone "m1-1.ephec-ti.be" {
     allow-transfer { 176.96.231.197; };
     allow-update { none; };
 };
-stude
