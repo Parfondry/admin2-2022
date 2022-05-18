@@ -21,8 +21,8 @@ readme_directory = no
 compatibility_level = 2
 
 # TLS parameters
-smtpd_tls_cert_file=/etc/letsencrypt/live/mail.m1-1.ephec-ti.be/fullchain.pem
-smtpd_tls_key_file=/etc/letsencrypt/live/mail.m1-1.ephec-ti.be/privkey.pem
+smtpd_tls_cert_file=/etc/ssl/fullchain.pem
+smtpd_tls_key_file=/etc/ssl/privkey.pem
 smtpd_use_tls=yes
 smtpd_tls_auth_only = yes
 smtp_tls_security_level = may
@@ -75,7 +75,6 @@ mynetworks = 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128
 mailbox_size_limit = 0
 recipient_delimiter = +
 inet_interfaces = all
-
 inet_protocols = all
 
 # Handing off local delivery to Dovecot's LMTP, and telling it where to store mail
