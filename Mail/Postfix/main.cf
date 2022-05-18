@@ -1,9 +1,4 @@
-# See /usr/share/postfix/main.cf.dist for a commented, more complete version
 
-# Debian specific:  Specifying a file name will cause the first
-# line of that file to be used as the name.  The Debian default
-# is /etc/mailname.
-#myorigin = /etc/mailname
 
 smtpd_banner = $myhostname ESMTP $mail_name (Ubuntu)
 biff = no
@@ -21,6 +16,7 @@ readme_directory = no
 compatibility_level = 2
 
 # TLS parameters
+# J'ai rajouté ici la chemin vers les clefs SSL afin de pouvoir utiliser POPs / IMAPs / SMTPs
 smtpd_tls_cert_file=/etc/ssl/fullchain.pem
 smtpd_tls_key_file=/etc/ssl/privkey.pem
 smtpd_use_tls=yes
@@ -64,6 +60,7 @@ smtpd_relay_restrictions =
 # See /usr/share/doc/postfix/TLS_README.gz in the postfix-doc package for
 # information on enabling SSL in the smtp client.
 
+# Information concernant notre nom de domaine
 myhostname = mail.m1-1.ephec-ti.be
 alias_maps = hash:/etc/aliases
 alias_database = hash:/etc/aliases
@@ -81,6 +78,7 @@ inet_protocols = all
 virtual_transport = lmtp:unix:private/dovecot-lmtp
 
 # Virtual domains, users, and aliases
+# Information concernant la base de donnée
 virtual_mailbox_domains = mysql:/etc/postfix/mysql-virtual-mailbox-domains.cf
 virtual_mailbox_maps = mysql:/etc/postfix/mysql-virtual-mailbox-maps.cf
 virtual_alias_maps = mysql:/etc/postfix/mysql-virtual-alias-maps.cf,
