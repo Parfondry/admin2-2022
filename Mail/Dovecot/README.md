@@ -5,6 +5,10 @@
 * J'ai rajouté ici les protocoles que nous allions utiliser : ```protocols = imap pop3 lmtp```.
 * Et indiqué notre nom de domaine ```postmaster_address = postmaster at m1-1.ephec-ti.be```.
 
+### dovecot-sql.conf.ext
+
+* Il contient toutes les informations de connexexion à la base de données MySQL.
+
 ### /conf/10-mail.conf
 
 * Ce fichier contrôle la façon dont Dovecot intéragit avec le système de fichiers du serveur pour stocker et récupérer les messages.
@@ -24,7 +28,3 @@
 ### conf.d/10-ssl.conf
 
 * Ce dernier contient le chemin vers l'emplacement du certificat SSL et la clé privé du domaine.
-
-### dovecot-sql.conf.ext
-
-* Il contient toutes les informations de connexexion à la base de données MySQL.
