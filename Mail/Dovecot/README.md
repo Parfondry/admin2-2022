@@ -2,7 +2,7 @@
 
 ### dovecot.conf
 
-* J'ai rajouté ici les protocoles que nous allions utiliser : ```protocols = imap pop3 lmtp```.
+* J'ai rajouté ici les protocoles que nous avons utilisé : ```protocols = imap pop3 lmtp```.
 * Et indiqué notre nom de domaine ```postmaster_address = postmaster at m1-1.ephec-ti.be```.
 
 ### dovecot-sql.conf.ext
