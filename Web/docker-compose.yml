@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  web:
+    image: he201832/web:latest
+    container_name: web
+    restart: always
+
+  php:
+    image: he201832/php:latest
+    container_name: php
+    restart: always
+    volumes:
+      - ./web/index.php:/usr/share/nginx/html/b2b/index.php
