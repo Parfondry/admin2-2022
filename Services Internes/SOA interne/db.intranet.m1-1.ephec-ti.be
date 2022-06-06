@@ -2,13 +2,11 @@ $ ORIGIN m1-1.ephec-ti.be.
 $TTL	3600
 @	    IN	    SOA	    ns.intranet.m1-1.ephec-ti.be.   root.m1-1.ephec-ti.be. (
 
-		        2	        ; Serial
-			3600		; Refresh
-			600		; Retry
-			86400		; Expire
-			600 	        ; Negative Cache TTL
-			)
-
+		    		    2017060101  ; serial
+                                    86400       ; refesh 
+                                    3600        ; retry 
+                                    3600000     ; expire 
+                                    3600        ; minimun
 
 ; name servers - NS record
 @				IN	NS			ns.m1-1.ephec-ti.be.
