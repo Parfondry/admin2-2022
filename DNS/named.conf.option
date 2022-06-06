@@ -5,7 +5,7 @@ options {
 	querylog yes;
 
 	listen-on { any; };
-	allow-query { internals; };
+	allow-query { any; };
 
 	// If there is a firewall between you and nameservers you want
 	// to talk to, you may need to fix the firewall to allow multiple
