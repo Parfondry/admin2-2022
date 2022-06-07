@@ -28,10 +28,6 @@ options {
 	dnssec-enable yes;
 	dnssec-validation auto;
 
-	//dnssec-enable yes;
-	//dnssec-validation auto;
-	
-	//dnssec-validation auto;
 	
 	recursion no;
 	allow-transfer { none; };
