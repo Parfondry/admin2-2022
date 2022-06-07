@@ -6,8 +6,18 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
+//zone interne 
 zone "intranet.m1-1.ephec-ti.be" {
 
 	  type master;
     file "/etc/bind/db.intranet.m1-1.ephec-ti.be";
+};
+
+//zone externe 
+zone "m1-1.ephec-ti.be" {
+	type master;
+
+	file "/etc/bind/m1-1.ephec-ti.be";
+
+	file "/etc/bind/db.m1-1.ephec-ti.be";
 };
