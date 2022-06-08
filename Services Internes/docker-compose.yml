@@ -1,0 +1,28 @@
+version : '3.6'
+
+services :
+  Resolver:
+    image: resolveur_intern
+    container_name: Resolver
+    stdin_open: true
+    entrypoint: /bin/bash
+    restart: always
+    networks:
+     interne:
+        ipv4_address: 176.96.4.1
+
+  Soa :
+    image: soa_intern
+    container_name: Soa
+    restart: always
+    networks:
+      interne:
+         ipv4_address: 172.16.4.2
+
+networks:
+  interne:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 176.96.4.0/24
