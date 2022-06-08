@@ -18,6 +18,17 @@ services :
     networks:
       interne:
          ipv4_address: 172.16.4.2
+  
+  samba:
+      image: samba
+      container_name: samba_container
+      restart: always
+    networks:
+      interne:
+        ipv4_address: 176.96.5.0
+    ports:
+      - "139:139"
+    
 
 networks:
   interne:
