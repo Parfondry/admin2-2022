@@ -2,7 +2,7 @@ version : '3.6'
 
 services :
   Directeur:
-    image: castermanerobin/posteuserinterne:latest 
+    image: posteuserinterne:latest 
     container_name: Directeur
     volumes:
       - ./resolv.conf:/etc/resolv.conf
@@ -14,7 +14,7 @@ services :
         ipv4_address: 176.96.1.1
 
   Secretaire:
-    image: castermanerobin/posteuserinterne:latest
+    image: posteuserinterne:latest
     container_name: Secretaire
     volumes:
       - ./resolv.conf:/etc/resolv.conf
@@ -26,7 +26,7 @@ services :
         ipv4_address: 176.96.1.2
 
   comptable1:
-    image: castermanerobin/posteuserinterne:latest
+    image: posteuserinterne:latest
     container_name: comptable1
     volumes:
       - ./resolv.conf:/etc/resolv.conf
@@ -38,7 +38,7 @@ services :
         ipv4_address: 176.96.3.1
 
   comptable2:
-    image: castermanerobin/posteuserinterne:latest
+    image: posteuserinterne:latest
     container_name: comptable2
     volumes:
       - ./resolv.conf:/etc/resolv.conf
@@ -50,7 +50,7 @@ services :
         ipv4_address: 176.96.3.2
 
   Commercial1:
-    image: castermanerobin/posteuserinterne:latest
+    image: posteuserinterne:latest
     container_name: Commercial1
     volumes:
       - ./resolv.conf:/etc/resolv.conf
@@ -62,7 +62,7 @@ services :
         ipv4_address: 176.96.3.3
 
   Commercial2:
-    image: castermanerobin/posteuserinterne:latest
+    image: posteuserinterne:latest
     container_name: Commercial2
     volumes:
       - ./resolv.conf:/etc/resolv.conf
@@ -74,7 +74,7 @@ services :
         ipv4_address: 176.96.3.4
 
   Atelier1:
-    image: castermanerobin/posteuserinterne:latest
+    image: posteuserinterne:latest
     container_name: Atelier1
     volumes:
       - ./resolv.conf:/etc/resolv.conf
@@ -86,7 +86,7 @@ services :
         ipv4_address: 176.96.2.1
 
   Atelier2:
-    image: castermanerobin/posteuserinterne:latest
+    image: posteuserinterne:latest
     container_name: Atelier2
     volumes:
       - ./resolv.conf:/etc/resolv.conf
