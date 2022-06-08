@@ -2,7 +2,7 @@ version: "3"
 
 services:
   web:
-    image: he201832/web:latest
+    image: web:latest
     container_name: web
     restart: always
 
