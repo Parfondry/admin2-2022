@@ -1,3 +1,9 @@
+CREATE DATABASE mailserver;
+CREATE USER 'mailuser'@'127.0.0.1' IDENTIFIED BY 'password';
+GRANT SELECT ON mailserver.* TO 'mailuser'@'127.0.0.1';
+FLUSH PRIVILEGES;
+USE mailserver;
+
 CREATE TABLE `virtual_domains` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(50) NOT NULL,
@@ -29,4 +35,4 @@ INSERT INTO mailserver.virtual_domains (name) VALUES ('m1-1.ephec-ti.be');
 INSERT INTO mailserver.virtual_users (domain_id, password , email) VALUES ('1', '***', 'directeur@m1-1.ephec-ti.be'), ('1', '***', 'secretariat@m1-1.ephec-ti.be'), ('1', '***', 'robin@m1-1.ephec-ti.be');
 INSERT INTO mailserver.virtual_users (domain_id, password , email) VALUES ('1', '***', 'atelier@m1-1.ephec-ti.be');
 
-INSERT INTO mailserver.virtual_aliases (domain_id, source, destination) VALUES ('1', 'directeur@m1-1.ephec-ti.be', 'robin@castermane.be');
+INSERT INTO mailserver.virtual_aliases (domain_id, source, destination) VALUES ('1', 'directeur@m1-1.ephec-ti.be', 'he201674@students.ephec.be');
