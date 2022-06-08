@@ -1,6 +1,7 @@
 FROM ubuntu:latest
 
 RUN apt update && apt upgrade -y && apt install bind9 bind9utils dnsutils net-tools -y
+RUN apt install nano -y
 
 COPY named.conf /etc/bind/
 COPY named.conf.local /etc/bind/
