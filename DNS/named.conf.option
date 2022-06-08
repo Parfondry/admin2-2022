@@ -6,6 +6,8 @@ options {
 
 	listen-on { any; };
 	allow-query { any; };
+	
+	version "Unknown";
 
 	// If there is a firewall between you and nameservers you want
 	// to talk to, you may need to fix the firewall to allow multiple
