@@ -19,4 +19,7 @@ curl -o https://raw.githubusercontent.com/Parfondry/admin2-2022/main/Services In
 
 cd ..
 mkdir user && cd user 
-
+curl -o https://raw.githubusercontent.com/Parfondry/admin2-2022/main/Services Internes/user/Dockerfile
+curl -o https://raw.githubusercontent.com/Parfondry/admin2-2022/main/Services Internes/user/docker-compose.yml
+curl -o https://raw.githubusercontent.com/Parfondry/admin2-2022/main/Services Internes/user/download.sh
+curl -o https://raw.githubusercontent.com/Parfondry/admin2-2022/main/Services Internes/user/resolv.conf
