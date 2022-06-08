@@ -26,8 +26,8 @@ options {
 	//========================================================================
 
 	dnssec-enable yes;
-	dnssec-validation auto;
-
+	dnssec-validation yes;
+	dnssec-lookaside auto;
 	
 	recursion no;
 	allow-transfer { none; };
