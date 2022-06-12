@@ -1,6 +1,7 @@
 version : '3.6'
 
 services :
+
   Resolver:
     image: resolveur_intern
     container_name: Resolver
@@ -19,7 +20,7 @@ services :
       interne:
          ipv4_address: 172.16.4.2
   
-  samba:
+  Samba:
       image: samba
       container_name: samba_container
       restart: always
