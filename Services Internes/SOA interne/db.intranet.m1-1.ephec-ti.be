@@ -10,11 +10,11 @@ $TTL	3600
 
 ; name servers - NS record
 @				IN	NS			ns.intranet.m1-1.ephec-ti.be.
-ns				IN	A	176.96.231.196
+ns				IN	A	141.95.159.154
 
 
 ;Serveur Web
-b2b			IN	A	176.96.231.196;
-www			IN	A	176.96.231.196;
+b2b			IN	A	141.95.159.154;
+www			IN	A	141.95.159.154;
 
-resolv			IN     A              176.96.231.195
+resolv			IN     A              141.95.159.154
