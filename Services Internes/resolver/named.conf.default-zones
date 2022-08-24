@@ -1,3 +1,4 @@
+//DEFAULT
 zone "localhost" {
         type master;
         file "/etc/bind/db.local";
@@ -15,4 +16,20 @@ zone "0.in-addr.arpa" {
 zone "255.in-addr.arpa" {
         type master;
         file "/etc/bind/db.255";
+};
+
+//EXTERNE
+zone "m1-1.ephec-ti.be." IN {
+        type forward;
+        forwarders { 141.95.159.154; };
+        forward only;
+};
+
+
+
+//INTERNE
+zone "intranet.woody" {
+        type forward;
+        forwarders { 176.96.0.2; };
+        forward only;
 };
