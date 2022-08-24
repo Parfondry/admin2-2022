@@ -31,15 +31,15 @@ services :
       - "139:139"
       
    Intranet:
-    build:
-      context: ./intranet
-      dockerfile: Dockerfile
+      image: intranet
+      container_name: intranet
+      restart: always
     networks:
       local_network:
         ipv4_address: 176.96.1.1
     ports:
       - "8080:80"
-    container_name: intranet
+  
 
 networks:
   interne:
