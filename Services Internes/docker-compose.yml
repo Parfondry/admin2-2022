@@ -92,42 +92,36 @@ services:
 
 networks:
   interne:
-    driver: bridge
     ipam:
       driver: default
       config:
         - subnet: 176.96.4.0/24
           
   Direction:
-    driver: bridge
     ipam:
       driver: default
       config:
         - subnet: 176.96.1.0/24
           gateway: 176.96.1.1
   Atelier:
-    driver: bridge
     ipam:
       driver: default
       config:
         - subnet: 176.96.2.0/24
           gateway: 176.96.2.1
-  compta_network:
-   driver: bridge
+  Compta:
     ipam:
       driver: default
       config:
         - subnet: 176.96.3.0/24
           gateway: 176.96.3.1
-  commerciaux_network:
-  driver: bridge
+  Commerciaux:
     ipam:
       driver: default
       config:
         - subnet: 176.96.3.0/24
           gateway: 176.96.3.3
-  secretaire_network:
-   driver: bridge
+  Secretaire:
     ipam:
       driver: default
       config:
