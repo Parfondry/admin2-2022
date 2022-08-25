@@ -46,61 +46,50 @@ services:
     container_name: samba
 
   direction:
-    # construction de l'image de base du conteneur
     build:
       context: ./user/direction
       dockerfile: Dockerfile
-    # spécification du réseau auquel se connecter
     networks:
       direction_network:
-        ipv4_address: 192.168.5.2
-    container_name: direction_container
+        ipv4_address: 176.96.1.1
+    container_name: direction
 
   atelier:
-    # construction de l'image de base du conteneur
     build:
       context: ./user/atelier
       dockerfile: Dockerfile
-    # spécification du réseau auquel se connecter
     networks:
       atelier_network:
-        ipv4_address: 192.168.1.2
-    container_name: atelier_container
+        ipv4_address: 176.96.2.1
+    container_name: atelier
 
   compta:
-    # construction de l'image de base du conteneur
     build:
       context: ./user/compta
       dockerfile: Dockerfile
-    # spécification du réseau auquel se connecter
     networks:
       compta_network:
-        ipv4_address: 192.168.2.2
-    container_name: compta_container
+        ipv4_address: 176.96.3.1
+    container_name: compta
 
   commerciaux:
-    # construction de l'image de base du conteneur
     build:
       context: ./user/commerciaux
       dockerfile: Dockerfile
-    # spécification du réseau auquel se connecter
     networks:
       commerciaux_network:
-        ipv4_address: 192.168.3.2
-    container_name: commerciaux_container
+        ipv4_address: 176.96.3.3
+    container_name: commerciaux
 
   secretariat:
-    # construction de l'image de base du conteneur
     build:
       context: ./user/secretariat
       dockerfile: Dockerfile
-    # spécification du réseau auquel se connecter
     networks:
       secretaire_network:
-        ipv4_address: 192.168.4.2
-    container_name: secretaire_container
+        ipv4_address: 176.96.1.2
+    container_name: secretaire
 
-# spécification des réseaux auxquels se connecter
 networks:
   interne:
     driver: bridge
@@ -109,38 +98,38 @@ networks:
       config:
         - subnet: 176.96.4.0/24
           
-  direction_network:
-    # use a custom driver, with no options
+  Direction:
+    driver: bridge
     ipam:
       driver: default
       config:
-        - subnet: 192.168.5.0/24
-          gateway: 192.168.5.1
-  atelier_network:
-    # use a custom driver, with no options
+        - subnet: 176.96.1.0/24
+          gateway: 176.96.1.1
+  Atelier:
+    driver: bridge
     ipam:
       driver: default
       config:
-        - subnet: 192.168.1.0/24
-          gateway: 192.168.1.1
+        - subnet: 176.96.2.0/24
+          gateway: 176.96.2.1
   compta_network:
-    # use a custom driver, with no options
+   driver: bridge
     ipam:
       driver: default
       config:
-        - subnet: 192.168.2.0/24
-          gateway: 192.168.2.1
+        - subnet: 176.96.3.0/24
+          gateway: 176.96.3.1
   commerciaux_network:
-    # use a custom driver, with no options
+  driver: bridge
     ipam:
       driver: default
       config:
-        - subnet: 192.168.3.0/24
-          gateway: 192.168.3.1
+        - subnet: 176.96.3.0/24
+          gateway: 176.96.3.3
   secretaire_network:
-    # use a custom driver, with no options
+   driver: bridge
     ipam:
       driver: default
       config:
-        - subnet: 192.168.4.0/24
-          gateway: 192.168.4.1
+        - subnet: 176.96.1.0/24
+          gateway: 176.96.1.2
