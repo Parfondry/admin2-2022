@@ -13,7 +13,7 @@ services:
 
   soa_interne:
     build:
-      context: ./soa_interne
+      context: ./SOA interne
       dockerfile: Dockerfile
     networks:
       local_network:
