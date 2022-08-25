@@ -1,46 +1,106 @@
-version : '3.6'
+version: "2.2" 
 
-services :
 
-  Resolver:
-    image: resolveur_intern
-    container_name: Resolver
-    stdin_open: true
-    entrypoint: /bin/bash
-    restart: always
+services:
+  resolver:
+    build:
+      context: ./resolver
+      dockerfile: Dockerfile
     networks:
-     interne:
+      local_network:
         ipv4_address: 176.96.4.1
+    container_name: resolver
 
-  Soa :
-    image: soa_intern
-    container_name: Soa
-    restart: always
+  soa_interne:
+    build:
+      context: ./soa_interne
+      dockerfile: Dockerfile
     networks:
-      interne:
-         ipv4_address: 176.96.4.2
-  
-  Samba:
-      image: samba
-      container_name: samba_container
-      restart: always
-    networks:
-      interne:
-        ipv4_address: 176.96.5.0
+      local_network:
+        ipv4_address: 176.96.4.2
     ports:
-      - "139:139"
-      
-   Intranet:
-      image: intranet
-      container_name: intranet
-      restart: always
+      - "53:53/tcp"
+      - "53:53/udp"
+    container_name: soa_interne
+
+  intranet:
+    build:
+      context: ./intranet
+      dockerfile: Dockerfile
     networks:
       local_network:
         ipv4_address: 176.96.1.1
     ports:
       - "8080:80"
-  
+    container_name: intranet
 
+  samba:
+    build:
+      context: ./samba
+      dockerfile: Dockerfile
+    networks:
+      local_network:
+        ipv4_address: 176.96.5.0
+    ports:
+      - "139:139"
+    container_name: samba
+
+  direction:
+    # construction de l'image de base du conteneur
+    build:
+      context: ./user/direction
+      dockerfile: Dockerfile
+    # spécification du réseau auquel se connecter
+    networks:
+      direction_network:
+        ipv4_address: 192.168.5.2
+    container_name: direction_container
+
+  atelier:
+    # construction de l'image de base du conteneur
+    build:
+      context: ./user/atelier
+      dockerfile: Dockerfile
+    # spécification du réseau auquel se connecter
+    networks:
+      atelier_network:
+        ipv4_address: 192.168.1.2
+    container_name: atelier_container
+
+  compta:
+    # construction de l'image de base du conteneur
+    build:
+      context: ./user/compta
+      dockerfile: Dockerfile
+    # spécification du réseau auquel se connecter
+    networks:
+      compta_network:
+        ipv4_address: 192.168.2.2
+    container_name: compta_container
+
+  commerciaux:
+    # construction de l'image de base du conteneur
+    build:
+      context: ./user/commerciaux
+      dockerfile: Dockerfile
+    # spécification du réseau auquel se connecter
+    networks:
+      commerciaux_network:
+        ipv4_address: 192.168.3.2
+    container_name: commerciaux_container
+
+  secretariat:
+    # construction de l'image de base du conteneur
+    build:
+      context: ./user/secretariat
+      dockerfile: Dockerfile
+    # spécification du réseau auquel se connecter
+    networks:
+      secretaire_network:
+        ipv4_address: 192.168.4.2
+    container_name: secretaire_container
+
+# spécification des réseaux auxquels se connecter
 networks:
   interne:
     driver: bridge
@@ -48,3 +108,39 @@ networks:
       driver: default
       config:
         - subnet: 176.96.4.0/24
+          
+  direction_network:
+    # use a custom driver, with no options
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.5.0/24
+          gateway: 192.168.5.1
+  atelier_network:
+    # use a custom driver, with no options
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.1.0/24
+          gateway: 192.168.1.1
+  compta_network:
+    # use a custom driver, with no options
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.2.0/24
+          gateway: 192.168.2.1
+  commerciaux_network:
+    # use a custom driver, with no options
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.3.0/24
+          gateway: 192.168.3.1
+  secretaire_network:
+    # use a custom driver, with no options
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.4.0/24
+          gateway: 192.168.4.1
