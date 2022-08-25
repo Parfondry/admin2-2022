@@ -91,7 +91,7 @@ services:
     container_name: secretaire
 
 networks:
-  interne:
+  local_network:
     ipam:
       driver: default
       config:
